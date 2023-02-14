@@ -8,7 +8,6 @@ from django.conf import settings
 def job():
     now = timezone.now()
     queryset = bookings.objects.filter(status= 'active',show__show_time__lte = now)
-    print(queryset)
     for obj in queryset:
         print(obj.status)
         obj.status = 'not active'
